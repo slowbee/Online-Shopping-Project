@@ -1,0 +1,302 @@
+import pandas as pd
+import numpy as np
+import mysql.connector as sqltor
+
+mycon = sqltor.connect(host ="localhost",user = "root", passwd = "mysql", database = "login",autocommit = True)
+cursor = mycon.cursor(buffered=True);    
+
+def start():
+    cursor.execute("select * from start")
+    products = cursor.fetchall();
+    print("------------------------------------------------------------------------------------------------------------------------")
+    print ("Sr_no \t\t\t|  Category \t\t|            Item_No\t|")
+    for row in products:
+            Sr_no     = row[0]
+            Category   = row[1]
+            Item_No   = row[2]
+            print ("%s         \t\t| %s      \t\t|       %s \t\t|" % (Sr_no, Category, Item_No))
+    print("----------------------------------------------------------------------------------------------------------")
+    global select
+    select = (input("Select the product/Category:")).lower()
+def selection():
+    if select == "back":
+        login();
+    if select == "book" :
+        cursor.execute("select * from book")
+        books = cursor.fetchall();
+        print("------------------------------------------------------------------------------------------------------------------------")
+        print ("Sr_no \t\t\t|  Product_code \t\t|  Product Name \t\t|      Publication\t\t|Product_rating \t\t| MRP_Per_product  \t\t| Availability_of_product  \t\t| In_stock ")
+        for row in books:
+                Sr_no     = row[0]
+                Product_code   = row[1]
+                Product_Name  = row[2]
+                Publication  = row[3]
+                Product_rating  = row[4]
+                MSRP_Per_product = row[5]
+                Availability_of_product= row[6]
+                In_stock   = row[7]
+                print ("%s         \t\t| %s      \t\t|       %s \t\t|  %s \t\t|  %s \t\t|  %s \t\t|  %s \t\t|  %s \t\t|" % (Sr_no, Product_code, Product_Name, Publication, Product_rating, MSRP_Per_product, Availability_of_product, In_stock));
+        print("----------------------------------------------------------------------------------------------------------")
+        Cart();
+        mycon.close();
+ elif select == "electronics":
+        cursor.execute("SELECT * FROM electronics")
+        electronics = cursor.fetchall()
+        print("------------------------------------------------------------------------------------------------------------------------")
+
+print("Sr_no\t| Product_code\t\t| Product_Name\t\t| Brand \t\t|Price\t| Stock_quantity\t| Category\t| Rating\t| Description")
+        for row in electronics:
+                Sr_no = row[0]
+                Product_code = row[1]
+                Product_Name = row[2]
+                Brand = row[3]
+                Price_in_inr = row[4]
+                Avalability_of_product = row[5]
+                In_stock = row[6]
+                Product_rating = row[7]
+                print("%s\t\t| %s\t\t| %s\t\t| %s\t| %s\t\t| %s\t\t| %s\t\t|" % (Sr_no, Product_code, Product_Name, Brand, Price_in_inr, Avalability_of_product, In_stock));
+                print("------------------------------------------------------------------------------------------------------------------------");
+        Cart();
+        mycon.close(); 
+ elif select == "cosmetics":
+        cursor.execute("select * from cosmetics")
+        cosmetics = cursor.fetchall();
+        print("------------------------------------------------------------------------------------------------------------------------")
+        print ("Sr_no \t\t\t| Product_code \t\t| Product Name \t\t|Quantity \t\t| Price_in_Inr \t\t| Brand \t\t| Availabilit_of_Product \t\t|In_Stock\t\t|Product_rating ")
+        for row in cosmetics:
+                Sr_no = row[0]
+                Product_code = row[1]
+                Product_Name = row[2]
+                Quantity = row[3]
+                Price_in_Inr= row[4]
+                Brand= row[5]
+                Availability_of_product = row[6]
+ In_stock = row[7]
+                Product_rating = [8]
+                print ("%s \t\t| %s \t\t| %s \t\t| %s \t\t| %s \t\t| %s \t\t| %s \t\t| %s \t\t|" % (Sr_no, Product_code, Product_Name, Quantity, Price_in_Inr, Brand,Availability_of_product, In_stock,Product_rating));
+                print("----------------------------------------------------------------------------------------------------------")
+        Cart();
+        mycon.close();
+    elif select == "clothes":
+        cursor.execute("select * from clothes")
+        clothes= cursor.fetchall();
+        print("------------------------------------------------------------------------------------------------------------------------")
+        print ("Sr_no \t\t\t| Product_code \t\t| Product Name \t\t| Brand\t\t|Size \t\t| Price_in_inr \t\t| Availability_of_product \t\t| In_stock \t\t| Product_rating")
+        for row in clothes:
+                Sr_no = row[0]
+                Product_code = row[1]
+                Product_Name = row[2]
+                Brand = row[3]
+                Size = row[4]
+                Price_in_Inr= row[5]
+                Availability_of_product= row[6]
+                In_stock = row[7]
+                Product_rating = row[8]
+                print ("%s \t\t| %s \t\t| %s \t\t| %s \t\t| %s \t\t| %s \t\t| %s \t\t| %s \t\t| %s \t\t|" % (Sr_no, Product_code, Product_Name, Brand, Size, Price_in_Inr, Availability_of_product, In_stock,Product_rating));
+                print("----------------------------------------------------------------------------------------------------------")
+        Cart();
+        mycon.close();        
+ elif select == "furniture":
+        cursor.execute("select * from furniture_home_decor")
+        furniture_home_decor = cursor.fetchall();
+        print("------------------------------------------------------------------------------------------------------------------------")   
+        print ("Sr_no \t\t\t| Product_code \t\t| Product Name \t\t|Type \t\t| Price_in_Inr \t\t| Brand \t\t| Availabilit_of_Product \t\t| In_Stock,Product_rating")
+        for row in furniture_home_decor:
+                Sr_no = row[0]
+                Product_code = row[1]
+                Product_Name = row[2]
+                Type = row[3]
+                Price_in_Inr= row[4]
+                Brand = row[5]
+                Availability_of_product = row[6]
+                In_stock = row[7]
+                Product_rating = [8]
+                print ("%s \t\t| %s \t\t| %s \t\t| %s \t\t| %s \t\t| %s \t\t| %s \t\t| %s \t\t|" % (Sr_no, Product_code, Product_Name, Type, Price_in_Inr, Brand,Availability_of_product, In_stock, Product_rating));
+                print("----------------------------------------------------------------------------------------------------------")
+        Cart();
+        mycon.close();
+    elif select == "grocery":
+        cursor.execute("select * from grocery")
+        grocery = cursor.fetchall();
+        print("------------------------------------------------------------------------------------------------------------------------")
+        print ("Sr_no \t\t\t| Product_code \t\t| Product Name \t\t|Quantity \t\t| Price_in_Inr \t\t| Brand \t\t| Availabilit_of_Product \t\t|In_Stock\t\t|Product_rating")
+        for row in grocery:
+                Sr_no = row[0]
+                Product_code = row[1]
+
+  Product_Name = row[2]
+                Quantity = row[3]
+                Price_in_Inr= row[4]
+                Brand = row[5]
+                Availability_of_product = row[6]
+                In_stock = row[7]
+                Product_rating = [8]
+                print ("%s \t\t| %s \t\t| %s \t\t| %s \t\t| %s \t\t| %s \t\t| %s \t\t| %s \t\t|%s \t\t|" % (Sr_no, Product_code, Product_Name, Quantity, Price_in_Inr, Brand,Availability_of_product, In_stock, Product_rating));
+                print("----------------------------------------------------------------------------------------------------------")
+        Cart();
+        mycon.close();
+ elif select == "medicine":
+        cursor.execute("select * from medicinal_drugs")
+        medicinal_drugs = cursor.fetchall();
+        print("------------------------------------------------------------------------------------------------------------------------")
+        print ("Sr_no \t\t\t| Product_code \t\t| Product Name\t\t|Dosage \t\t| Price_in_Inr \t\t| Brand \t\t| Availabilit_of_Product \t\t| In_Stock\t\t|Product_rating")
+        for row in medicinal_drugs:
+                Sr_no = row[0]
+                Product_code = row[1]
+                Product_Name = row[2]
+                Dosage = row[3]
+                Price_in_Inr= row[4]
+                Brand = row[5]
+                Availability_of_product = row[6]
+                In_stock = row[7]
+                Product_rating = [8]
+                print ("%s \t\t| %s \t\t| %s \t\t| %s \t\t| %s \t\t| %s \t\t| %s \t\t| %s \t\t|" % (Sr_no, Product_code, Product_Name, Dosage, Price_in_Inr, Brand,Availability_of_product, In_stock, Product_rating));
+                print("----------------------------------------------------------------------------------------------------------")
+        Cart();    
+elif select== "stationary":
+        cursor.execute("select * from stationery")
+        stationery = cursor.fetchall();
+        print("------------------------------------------------------------------------------------------------------------------------")
+        print ("Sr_no \t\t\t| Product_code \t\t| Product Name\t\t|Type \t\t| Price_in_Inr \t\t| Brand \t\t| Availabilit_of_Product \t\t| In_Stock\t\t|Product_rating")
+        for row in stationery:
+                Sr_no = row[0]
+                Product_code = row[1]
+                Product_Name = row[2]
+                Type = row[3]
+                Price_in_Inr= row[4]
+                Brand = row[5]
+                Availability_of_product = row[6]
+                In_stock = row[7]
+                Product_rating = [8]
+                print ("%s \t\t| %s \t\t| %s \t\t| %s \t\t| %s \t\t| %s \t\t| %s \t\t| %s \t\t|" % (Sr_no, Product_code, Product_Name, Type, Price_in_Inr, Brand,Availability_of_product, In_stock, Product_rating));
+                print("-----------------------------------------------------------------------------------------------------------")
+        Cart();
+        mycon.close();
+Availability_of_product = row[6]
+                In_stock = row[7]
+                Product_rating = [8]
+                print ("%s \t\t| %s \t\t| %s \t\t| %s \t\t| %s \t\t| %s \t\t| %s \t\t| %s \t\t| %s \t\t|" % (Sr_no, Product_code, Product_Name, Quantity, Price_in_Inr, Brand,Availability_of_product, In_stock, Product_rating));
+                print("----------------------------------------------------------------------------------------------------------")
+        Cart();
+        cursor.close();
+    elif select == "back":
+        start();
+        
+    
+else:
+        print("Please enter a valid category")
+        start();
+        selection();
+        cursor.close();
+def Cart():
+    global Cart_
+    Cart_ = input("Enter the serial number for your desired product: ")
+    if Cart_ == 'back':
+        start();
+        selection();
+    else:
+             asasd = cursor.execute("select product_code,product_name,Price_in_inr from %s where Sr_no = %s" % (select, Cart_))
+             indacart = cursor.fetchall()
+             print("------------------------------------------------------------------------------------------------------------------------")
+             print ("\t\t\t|  Product_code \t\t|  Product Name \t\t|      MRP ")
+             global Product_Name
+             for row in indacart:    
+                 global Product_code
+                 Product_code   = row[0]
+                 global Proudct_Name
+                 Product_Name  = row[1]
+                 global MRP
+                 MRP  = row[2]
+                 print ("%s         \t\t| %s      \t\t|       %s \t\t| " % (Product_code, Product_Name,int(MRP)));
+                 print("----------------------------------------------------------------------------------------------------------")        
+ YON = (input("Do you want to add %s to the cart(Yes/No): " % (Product_Name))).lower()
+                 cursor.execute("Insert into Cart (Product_code,Product_Name,MRP) values('%s','%s',%s)" % (Product_code, Product_Name,MRP))
+                 print("'%s' is added to cart succesfully" % (Product_Name))
+                 cursor.execute("select in_stock from %s where Sr_no = %s" % (select,Cart_))
+                 in_stock = cursor.fetchall()
+                 global instock
+                 global qty
+                 for row in in_stock:
+                         global instock
+                         instock = row[0]
+                         break;
+                 global qty
+                 qty = input("How many %s do want in your cart?" % (Product_Name))
+                 if isinstance(qty, int):
+                     print("added")                      
+                 elif qty == '':
+                        print("Please Enter a valid quantity")
+                        Cart();
+                        break;
+                 elif qty == 0:
+                        print("Quantity can not be zero")
+                        Cart();
+                 elif int(qty) > int(instock):
+                        print("Only %s units are(is) avaiable of %s, Now you will be redirected to the cart" % (qty,Product_Name))            
+                        Cart();
+                        break;
+                 cursor.execute("Update Cart set Quantity = %s where product_Name = '%s'" % (qty,Product_Name))
+                 cursor.execute("Update cart set total = MRP*Quantity") 
+                 global PC
+                 PC = Product_code
+                 updation();
+                 another_product();
+ 
+def updation():
+    cursor.execute("select in_stock from %s where Sr_no = %s" % (select,Cart_))
+    in_stock = cursor.fetchall()
+    print(in_stock)
+    global instock
+    for row in in_stock:
+        global instock
+        instock = row[0]
+    print(instock)
+    updated = int(instock) - int(qty)
+    if updated == 0:
+        print("This Product in not instock")
+cursor.execute("Update %s set Availability_of_product = 'Not Available' where Product_code = '%s'" % (select,Product_code));
+        cursor.execute("Update %s set In_stock = 0 where Product_code = '%s'" % (select,Product_code));
+    else:
+        cursor.execute("Update %s set In_stock = %s where product_code = '%s'" % (select,updated,PC))
+        mycon.commit();
+    
+    
+def another_product():
+    product2 = input("Do you want to add another product to your cart?(Yes/No): ")
+    if product2 == "yes":
+        selection();
+    elif product2 == "no":
+        checkout();
+    else:
+        print("Please choose from yes or no")
+        another_product();
+    
+                
+def total():
+    cursor.execute("Update cart set total = MRP*Quantity;")  
+    mycon.commit()
+    cursor.execute("select sum(total) from cart")
+    global sum
+    sum = cursor.fetchall()       
+    for row in sum:    
+            summ_   = row[0]
+            print ("                                                 Your total sum is %s" % (summ_));
+
+def checkout():
+    checkOut = cursor.execute("select * from cart")
+    indacart = cursor.fetchall()
+    print("------------------------------------------------------------------------------------------------------------------------")
+    print ("\t\t\t|  Product_code \t\t|  Product Name \t\t|      MRP \t\t|      Quantity \t\t|      Total")
+    for row in indacart:    
+            Product_code   =a row[0]
+            Product_Name  = row[1]
+            MRP  = row[2]
+            Quantity = row[3]
+            Total = row[4]
+            print ("%s         \t\t| %s      \t\t|       %s \t\t|  %s \t\t| " % (Product_code, Product_Name,int(MRP),Quantity),Total);
+    total();
+    print("------------------------------------------------------------------------------------------------------------------------")
+    cursor.close();
+            
+
+
