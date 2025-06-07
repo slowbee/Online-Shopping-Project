@@ -1,0 +1,157 @@
+CREATE TABLE BOOK (    
+Sr_no INT ,    
+Product_code VARCHAR(20) PRIMARY KEY,   
+Product_name VARCHAR(255) NOT NULL,    
+Publication VARCHAR(100) NOT NULL,   
+Product_rating NUMERIC,    
+MRP_Per_product NUMERIC(10, 2) NOT NULL,   
+Availability_of_product VARCHAR(15),    
+In_stock INT);
+INSERT INTO BOOK (Sr_no, Product_code, Product_name, Publication, MRP_Per_product, Availability_of_product, In_stock, Product_rating) VALUES    (1, 'ASD123', 'The Book Thief', 'Knopf', 1798, 'Available', 21, 3),    
+(2, 'ASD234', 'The Time Traveler''s Wife', 'MacAdam/Cage', 1498, 'Available', 27, 4),    
+(3, 'ASD345', 'Atonement', 'Jonathan Cape', 1398, 'Available', 24, 2),    
+(4, 'ASD456', 'The Grapes of Wrath', 'The Viking Press', 1398, 'Available', 29, 5),    
+(5, 'ASD567', 'The Little Prince', 'Reynal & Hitchcock', 1498, 'Available', 44, 1),    
+(6, 'ASD678', 'The Brothers Karamazov', 'The Russian Messenger', 1598, 'Available', 69, 3),    
+(7, 'ASD789', 'The Name of the Wind', 'DAW Books', 1698, 'Available', 56, 4),    
+(8, 'ASD890', 'The Martian', 'Crown Publishing', 1198, 'Available', 52, 2),    
+(9, 'QUE123', 'The Catcher in the Rye', 'Little, Brown and Company', 1098, 'Available', 55, 5),    
+(10, 'QUE234', 'The Road', 'Alfred A. Knopf', 1098, 'Available', 62, 1),    
+(11, 'QUE345', 'The Hobbit', 'George Allen & Unwin', 1598, 'Available', 67, 4),    
+(12, 'QUE456', 'Dune', 'Chilton Books', 1298, 'Available', 48, 3),    
+(13, 'QUE567', 'The Night Circus', 'Doubleday', 1298, 'Available', 42, 2),    
+(14, 'QUE678', 'Siddhartha', 'New Directions', 1898, 'Available', 68, 5),    
+(15, 'YVH123', 'The Secret Garden', 'Frederick A. Stokes Company', 1098, 'Available', 63, 1),    
+(16, 'YVH234', 'The Time Machine', 'William Heinemann', 1398, 'Available', 43, 4),    
+(17, 'YVH345', 'The Grapes of Wrath', 'The Viking Press', 1398, 'Available', 29, 3),    
+(18, 'YVH456', 'The Martian', 'Crown Publishing', 1198, 'Available', 52, 2),    
+(19, 'YVH567', 'The Time Traveler''s Wife', 'MacAdam/Cage', 1498, 'Available', 27, 5),    
+(20, 'YVH678', 'The Ocean at the End of the Lane', 'William Morrow', 1698, 'Available', 31, 1);
+
+CREATE TABLE ELECTRONICS (    
+Sr_no INT AUTO_INCREMENT PRIMARY KEY,    
+Product_code VARCHAR(10) NOT NULL,    
+Product_name VARCHAR(255) NOT NULL,    
+Brand VARCHAR(255) NOT NULL,    
+Price_in_inr DECIMAL(10, 2) NOT NULL,    Availability_of_product VARCHAR(50) NOT NULL,    
+In_stock INT NOT NULL,    
+Product_rating INT);
+
+INSERT INTO ELECTRONICS (Sr_no, Product_code, Product_name, Brand, Price_in_inr, Availability_of_product, In_stock, Product_rating) VALUES    (1, 'ELC001', 'Samsung Galaxy S21', 'Samsung', 48749.25, 'Available', 14, 5),    (2, 'ELC002', 'Apple iPhone 13', 'Apple', 59999.25, 'Available', 15, 4),    (3, 'ELC003', 'Dell XPS 13 Laptop', 'Dell', 82499.25, 'Available', 10, 3),    (4, 'ELC004', 'Sony PlayStation 5', 'Sony', 33749.25, 'Available', 8, 4),    (5, 'ELC005', 'Bose Noise-Canceling Headphones', 'Bose', 22499.25, 'Available', 20, 5),    (6, 'ELC006', 'Canon EOS R6 Camera', 'Canon', 172499.25, 'Available', 5, 3),    (7, 'ELC007', 'Xbox Series X', 'Microsoft', 33749.25, 'Available', 12, 4),    (8, 'ELC008', 'LG OLED 4K TV', 'LG', 93749.25, 'Available', 18, 5),    (9, 'ELC009', 'Sony WH-1000XM4 Headphones', 'Sony', 22499.25, 'Available', 30, 4),    (10, 'ELC010', 'HP Spectre x360 Laptop', 'HP', 71249.25, 'Available', 6, 3);    
+(11, 'ELC011', 'Apple AirPods Pro', 'Apple', 14249.25, 'Available', 24, 5),    (12, 'ELC012', 'Nvidia GeForce RTX 3080', 'Nvidia', 44999.25, 'Available', 4, 4),    (13, 'ELC013', 'Samsung Smart TV', 'Samsung', 44999.25, 'Available', 25, 3),    (14, 'ELC014', 'Canon EOS R5 Camera', 'Canon', 262499.25, 'Available', 3, 4),    (15, 'ELC015', 'DJI Mavic Air 2 Drone', 'DJI', 56249.25, 'Available', 9, 5),    (16, 'ELC016', 'Xiaomi Mi 11 Smartphone', 'Xiaomi', 41249.25, 'Available', 11, 4),    (17, 'ELC017', 'Logitech G Pro X Keyboard', 'Logitech', 10499.25, 'Available', 22, 5),    (18, 'ELC018', 'Acer Predator Helios 300', 'Acer', 74999.25, 'Available', 7, 4),    (19, 'ELC019', 'Google Pixel 6', 'Google', 44999.25, 'Available', 13, 3),    (20, 'ELC020', 'Panasonic Lumix GH5 Camera', 'Panasonic', 142499.25, 'Available', 2, 4);
+
+CREATE TABLE UTENSILS (    
+Sr_no INT AUTO_INCREMENT PRIMARY KEY,    
+Product_code VARCHAR(10) NOT NULL,    
+Product_name VARCHAR(255) NOT NULL,    
+Quantity VARCHAR(20) NOT NULL,    
+Price_in_inr DECIMAL(10, 2) NOT NULL,    
+Brand VARCHAR(255) NOT NULL,    
+Availability_of_product VARCHAR(50) NOT NULL,    
+In_stock INT NOT NULL,    
+Product_rating INT);
+
+INSERT INTO UTENSILS (Product_code, Product_name, Quantity, Price_in_inr, Brand, Availability_of_product, In_stock, Product_rating) VALUES    ('UTN001', 'Cookware Set', '10 pieces', 599.99, 'Cuisinart', 'Available', 50, 4),    ('UTN002', 'Cutlery Set', '20 pieces', 199.99, 'Oneida', 'Available', 80, 5),    ('UTN003', 'Non-Stick Pan', '1 piece', 49.99, 'T-fal', 'Available', 120, 4),    ('UTN004', 'Pressure Cooker', '5 liters', 89.99, 'Hawkins', 'Available', 70, 5),    ('UTN005', 'Kitchen Knife Set', '7 pieces', 39.99, 'J.A. Henckels', 'Available', 60, 4),    ('UTN006', 'Cooking Utensils', '8 pieces', 29.99, 'OXO', 'Available', 100, 5);
+(11, 'ELC011', 'Apple AirPods Pro', 'Apple', 14249.25, 'Available', 24, 5),    (12, 'ELC012', 'Nvidia GeForce RTX 3080', 'Nvidia', 44999.25, 'Available', 4, 4),    (13, 'ELC013', 'Samsung Smart TV', 'Samsung', 44999.25, 'Available', 25, 3),    (14, 'ELC014', 'Canon EOS R5 Camera', 'Canon', 262499.25, 'Available', 3, 4),    (15, 'ELC015', 'DJI Mavic Air 2 Drone', 'DJI', 56249.25, 'Available', 9, 5),    (16, 'ELC016', 'Xiaomi Mi 11 Smartphone', 'Xiaomi', 41249.25, 'Available', 11, 4),    (17, 'ELC017', 'Logitech G Pro X Keyboard', 'Logitech', 10499.25, 'Available', 22, 5),    (18, 'ELC018', 'Acer Predator Helios 300', 'Acer', 74999.25, 'Available', 7, 4),    (19, 'ELC019', 'Google Pixel 6', 'Google', 44999.25, 'Available', 13, 3),    (20, 'ELC020', 'Panasonic Lumix GH5 Camera', 'Panasonic', 142499.25, 'Available', 2, 4);
+
+CREATE TABLE UTENSILS (    
+Sr_no INT AUTO_INCREMENT PRIMARY KEY,    
+Product_code VARCHAR(10) NOT NULL,    
+Product_name VARCHAR(255) NOT NULL,    
+Quantity VARCHAR(20) NOT NULL,    
+Price_in_inr DECIMAL(10, 2) NOT NULL,    
+Brand VARCHAR(255) NOT NULL,    
+Availability_of_product VARCHAR(50) NOT NULL,    
+In_stock INT NOT NULL,    
+Product_rating INT);
+
+INSERT INTO UTENSILS (Product_code, Product_name, Quantity, Price_in_inr, Brand, Availability_of_product, In_stock, Product_rating) VALUES    ('UTN001', 'Cookware Set', '10 pieces', 599.99, 'Cuisinart', 'Available', 50, 4),    ('UTN002', 'Cutlery Set', '20 pieces', 199.99, 'Oneida', 'Available', 80, 5),    ('UTN003', 'Non-Stick Pan', '1 piece', 49.99, 'T-fal', 'Available', 120, 4),    ('UTN004', 'Pressure Cooker', '5 liters', 89.99, 'Hawkins', 'Available', 70, 5),    ('UTN005', 'Kitchen Knife Set', '7 pieces', 39.99, 'J.A. Henckels', 'Available', 60, 4),    ('UTN006', 'Cooking Utensils', '8 pieces', 29.99, 'OXO', 'Available', 100, 5);
+('COS003', 'Mascara', '8ml', 19.99, 'CoverGirl', 'Available', 80, 4),    ('COS004', 'Eyeshadow Palette', '12g', 29.99, 'Urban Decay', 'Available', 90, 5),    ('COS005', 'Blush', '10g', 12.99, 'Revlon', 'Available', 60, 4),    ('COS006', 'Concealer', '5g', 9.99, 'NYX', 'Available', 110, 4),    ('COS007', 'Makeup Brushes Set', '10 pieces', 24.99, 'Real Techniques', 'Available', 75, 5),    ('COS008', 'Nail Polish', '10ml', 7.99, 'Essie', 'Available', 85, 4),    ('COS009', 'Facial Cleanser', '150ml', 15.99, 'Neutrogena', 'Available', 70, 5),    ('COS010', 'Shampoo', '250ml', 9.99, 'LOreal Paris', 'Available', 60, 4),    ('COS011', 'Conditioner', '250ml', 9.99, 'Pantene', 'Available', 70, 4),    ('COS012', 'Body Lotion', '200ml', 12.99, 'Nivea', 'Available', 110, 4),    ('COS013', 'Sunscreen', '50ml', 19.99, 'Coppertone', 'Available', 80, 5),    ('COS014', 'Perfume', '50ml', 34.99, 'Calvin Klein', 'Available', 120, 5),    ('COS015', 'Facial Moisturizer', '50ml', 14.99, 'Olay', 'Available', 100, 4),    ('COS016', 'Lip Balm', '4g', 5.99, 'Burts Bees', 'Available', 90, 5),    ('COS017', 'Hair Styling Gel', '150ml', 9.99, 'Garnier', 'Available', 70, 4),    ('COS018', 'Deodorant', '150ml', 6.99, 'Dove', 'Available', 110, 4),    ('COS019', 'Face Mask', '100ml', 7.99, 'Freeman', 'Available', 85, 4),    ('COS020', 'Eye Cream', '15ml', 18.99, 'LOreal Paris', 'Available', 95, 5);
+
+CREATE TABLE FURNITURE_HOME_DECOR (    
+Sr_no INT AUTO_INCREMENT PRIMARY KEY,    
+Product_code VARCHAR(10) NOT NULL,    
+Product_name VARCHAR(255) NOT NULL,    
+Category VARCHAR(50) NOT NULL,    
+Price_in_inr DECIMAL(10, 2) NOT NULL,    
+Brand VARCHAR(255) NOT NULL,    
+Availability_of_product VARCHAR(50) NOT NULL,    
+In_stock INT NOT NULL,    
+Product_rating INT);
+
+INSERT INTO FURNITURE_HOME_DECOR (Product_code, Product_name, Category, Price_in_inr, Brand, Availability_of_product, In_stock, Product_rating) VALUES    ('FH001', 'Sofa', 'Furniture', 49999.99, 'Ashley Furniture', 'Available', 50, 4);    
+('FH002', 'Coffee Table', 'Furniture', 7999.99, 'IKEA', 'Available', 80, 5),    ('FH003', 'Dining Set', 'Furniture', 14999.99, 'Rooms To Go', 'Available', 70, 4),    ('FH004', 'Bed Frame', 'Furniture', 8999.99, 'Wayfair', 'Available', 100, 4),    ('FH005', 'Wardrobe', 'Furniture', 12999.99, 'Broyhill', 'Available', 60, 4),    ('FH006', 'Lamp', 'Home Decor', 299.99, 'Threshold', 'Available', 110, 5),    ('FH007', 'Wall Art', 'Home Decor', 499.99, 'Pier 1', 'Available', 75, 4),    ('FH008', 'Bookshelf', 'Furniture', 2999.99, 'Ethan Allen', 'Available', 85, 4),    ('FH009', 'Accent Chair', 'Furniture', 3999.99, 'Havertys', 'Available', 60, 4),    ('FH010', 'Rug', 'Home Decor', 799.99, 'Safavieh', 'Available', 110, 4),    ('FH011', 'Desk', 'Furniture', 1999.99, 'Bush Furniture', 'Available', 70, 4),    ('FH012', 'Nightstand', 'Furniture', 699.99, 'Signature Design by Ashley', 'Available', 90, 5),    ('FH013', 'Vase', 'Home Decor', 199.99, 'CB2', 'Available', 80, 5),    ('FH014', 'Kitchen Table', 'Furniture', 3499.99, 'Crate and Barrel', 'Available', 85, 4),    ('FH015', 'Curtains', 'Home Decor', 399.99, 'Lowe''s', 'Available', 100, 4),    ('FH016', 'Shoe Rack', 'Furniture', 599.99, 'Walmart', 'Available', 95, 4),    ('FH017', 'Mirrors', 'Home Decor', 449.99, 'HomeGoods', 'Available', 120, 5),    ('FH018', 'Dresser', 'Furniture', 1799.99, 'Big Lots', 'Available', 70, 5),    ('FH019', 'Side Table', 'Furniture', 699.99, 'Rooms To Go', 'Available', 80, 4),    ('FH020', 'Wall Clock', 'Home Decor', 249.99, 'Hobby Lobby', 'Available', 110, 4),
+CREATE TABLE STATIONERY (    
+Sr_no INT AUTO_INCREMENT PRIMARY KEY,    
+Product_code VARCHAR(10) NOT NULL,    
+Product_name VARCHAR(255) NOT NULL,    
+Type VARCHAR(50) NOT NULL,    
+Price_in_inr DECIMAL(10, 2) NOT NULL,    
+Brand VARCHAR(255) NOT NULL,    
+Availability_of_product VARCHAR(50) NOT NULL,    
+In_stock INT NOT NULL,    
+Product_rating INT);
+
+INSERT INTO STATIONERY (Product_code, Product_name, Type, Price_in_inr, Brand, Availability_of_product, In_stock, Product_rating) VALUES    ('ST001', 'Notebook - Ruled', 'Notebooks', 199.99, 'Mead', 'Available', 150, 4),    ('ST002', 'Pens - Pack of 10', 'Pens', 49.99, 'BIC', 'Available', 200, 5),    ('ST003', 'Highlighters - Set of 6', 'Highlighters', 79.99, 'Sharpie', 'Available', 180, 4),    ('ST004', 'Binder - 3-inch', 'Binders', 99.99, 'Avery', 'Available', 120, 4),    ('ST005', 'Sticky Notes - Pack of 100', 'Sticky Notes', 39.99, 'Post-it', 'Available', 140, 4),    ('ST006', 'Markers - Set of 12', 'Markers', 69.99, 'Crayola', 'Available', 160, 5),    ('ST007', 'Scissors', 'Scissors', 19.99, 'Fiskars', 'Available', 190, 4),    ('ST008', 'Ruler - 12-inch', 'Rulers', 9.99, 'Westcott', 'Available', 210, 4),    ('ST009', 'Notebook - Plain', 'Notebooks', 199.99, 'Moleskine', 'Available', 130, 4),    ('ST010', 'Erasers - Pack of 3', 'Erasers', 14.99, 'Paper Mate', 'Available', 220, 5),    ('ST011', 'Whiteboard Markers - Set of 4', 'Markers', 49.99, 'Expo', 'Available', 170, 4),    ('ST012', 'Desk Organizer', 'Desk Accessories', 39.99, 'Rolodex', 'Available', 190, 5),    ('ST013', 'Correction Tape - Pack of 3', 'Correction Supplies', 29.99, 'Tombow', 'Available', 200, 4),    ('ST014', 'Pencils - Pack of 12', 'Pencils', 19.99, 'Ticonderoga', 'Available', 210, 4),    ('ST015', 'Crayons - Set of 24', 'Crayons', 29.99, 'Crayola', 'Available', 180, 4);
+('ST016', 'Hole Puncher', 'Desk Accessories', 24.99, 'Swingline', 'Available', 220, 5),    ('ST017', 'Calculator - Basic', 'Calculators', 49.99, 'Texas Instruments', 'Available', 160, 5),    ('ST018', 'Stapler', 'Desk Accessories', 19.99, 'Swingline', 'Available', 190, 4),    ('ST019', 'Notebook - Graph', 'Notebooks', 199.99, 'Cambridge', 'Available', 140, 5),    ('ST020', 'Pencil Sharpener', 'Pencil Sharpeners', 9.99, 'X-ACTO', 'Available', 210, 4);
+
+CREATE TABLE MEDICINAL_DRUGS (    
+Sr_no INT AUTO_INCREMENT PRIMARY KEY,    
+Product_code VARCHAR(10) NOT NULL,    
+Product_name VARCHAR(255) NOT NULL,    
+Dosage VARCHAR(20) NOT NULL,    
+Price_in_inr DECIMAL(10, 2) NOT NULL,    Brand VARCHAR(255) NOT NULL,    
+Availability_of_product VARCHAR(50) NOT NULL,    
+In_stock INT NOT NULL,    Product_rating INT);
+
+INSERT INTO MEDICINAL_DRUGS (Product_code, Product_name, Dosage, Price_in_inr, Brand, Availability_of_product, In_stock, Product_rating) VALUES    ('MD001', 'Aspirin', '100mg', 299.99, 'Bayer', 'Available', 200, 4),    ('MD002', 'Ibuprofen', '200mg', 349.99, 'Advil', 'Available', 150, 4),    ('MD003', 'Loratadine', '10mg', 259.99, 'Claritin', 'Available', 180, 5),    ('MD004', 'Amoxicillin', '500mg', 499.99, 'Amoxil', 'Available', 100, 5),    ('MD005', 'Omeprazole', '20mg', 449.99, 'Prilosec', 'Available', 120, 4),    ('MD006', 'Simvastatin', '40mg', 299.99, 'Zocor', 'Available', 100, 5),    ('MD007', 'Metoprolol', '25mg', 269.99, 'Lopressor', 'Available', 90, 4),    ('MD008', 'Lisinopril', '10mg', 229.99, 'Zestril', 'Available', 110, 4),    ('MD009', 'Levothyroxine', '100mcg', 299.99, 'Synthroid', 'Available', 70, 5),    ('MD010', 'Prednisone', '5mg', 249.99, 'Deltasone', 'Available', 80, 4),    ('MD011', 'Acetaminophen', '500mg', 249.99, 'Tylenol', 'Available', 95, 4),
+('MD012', 'Cetirizine', '10mg', 299.99, 'Zyrtec', 'Available', 120, 4),    ('MD013', 'Azithromycin', '250mg', 399.99, 'Z-Pak', 'Available', 80, 5),    ('MD014', 'Ranitidine', '150mg', 259.99, 'Zantac', 'Available', 110, 5),    ('MD015', 'Fluoxetine', '20mg', 279.99, 'Prozac', 'Available', 85, 4);
+
+CREATE TABLE TOYS_GAMES (    
+Sr_no INT AUTO_INCREMENT PRIMARY KEY,    
+Product_code VARCHAR(10) NOT NULL,    
+Product_name VARCHAR(255) NOT NULL,    
+Quantity VARCHAR(20) NOT NULL,    
+Price_in_inr DECIMAL(10, 2) NOT NULL,    
+Brand VARCHAR(255) NOT NULL,    
+Availability_of_product VARCHAR(50) NOT NULL,    
+In_stock INT NOT NULL,    Product_rating INT);
+
+INSERT INTO TOYS_GAMES (Product_code, Product_name, Quantity, Price_in_inr, Brand, Availability_of_product, In_stock, Product_rating) VALUES    ('TG001', 'Board Game - Monopoly', '1 set', 699.99, 'Hasbro', 'Available', 50, 4),    ('TG002', 'LEGO Classic Bricks', '1000 pieces', 799.99, 'LEGO', 'Available', 80, 5),    ('TG003', 'Action Figures - Spider-Man', '1 figure', 599.99, 'Marvel', 'Available', 120, 4),    ('TG004', 'Puzzle - 1000 Pieces', '1 puzzle', 649.99, 'Ravensburger', 'Available', 60, 4),    ('TG005', 'Dollhouse with Furniture', '1 set', 1799.99, 'KidKraft', 'Available', 110, 5),    ('TG006', 'Remote Control Car', '1 car', 1199.99, 'Traxxas', 'Available', 75, 4),    ('TG007', 'Building Blocks - Mega Set', '200 pieces', 799.99, 'Mega Bloks', 'Available', 85, 4),    ('TG008', 'Foosball Table', '1 table', 1799.99, 'Hathaway', 'Available', 70, 5),    ('TG009', 'Art Supplies Set', '50 pieces', 599.99, 'Crayola', 'Available', 100, 4),    ('TG010', 'Bicycle - Kids', '1 bicycle', 1299.99, 'Schwinn', 'Available', 65, 5),    ('TG011', 'Dartboard Set', '1 set', 899.99, 'Winmau', 'Available', 90, 4),    
+('TG012', 'Science Kit - Volcano', '1 kit', 599.99, 'National Geographic', 'Available', 70, 4),    ('TG013', 'LEGO Friends Set', '300 pieces', 699.99, 'LEGO', 'Available', 110, 5),    ('TG014', 'RC Helicopter', '1 helicopter', 799.99, 'Syma', 'Available', 80, 5),    ('TG015', 'Toy Kitchen Set', '1 set', 1199.99, 'Step2', 'Available', 90, 4),    ('TG016', 'Giant Jenga Game', '1 set', 599.99, 'GoSports', 'Available', 75, 4),    ('TG017', 'Play-Doh Set', '20 colors', 599.99, 'Play-Doh', 'Available', 100, 5),    ('TG018', 'Remote Control Boat', '1 boat', 799.99, 'Traxxas', 'Available', 60, 4),    ('TG019', 'Soccer Ball', '1 ball', 549.99, 'Nike', 'Available', 110, 4),    ('TG020', 'Chess Set', '1 set', 599.99, 'Staunton', 'Available', 85, 5);
+
+CREATE TABLE GROCERY(    
+Sr_no INT AUTO_INCREMENT PRIMARY KEY,    
+Product_code VARCHAR(10) NOT NULL,    
+Product_name VARCHAR(255) NOT NULL,    Quantity VARCHAR(20) NOT NULL,    
+Price_in_inr DECIMAL(10, 2) NOT NULL,    
+Brand VARCHAR(255) NOT NULL,    
+Availability_of_product VARCHAR(50) NOT NULL,    
+In_stock INT NOT NULL,    Product_rating INT);
+
+INSERT INTO GROCERY (Product_code, Product_name, Quantity, Price_in_inr, Brand, Availability_of_product, In_stock, Product_rating) VALUES    ('GRC001', 'Rice', '5kg', 249.99, 'Daawat', 'Available', 120, 4),    ('GRC002', 'Wheat Flour', '2kg', 79.99, 'Aashirvaad', 'Available', 150, 5),    ('GRC003', 'Sugar', '2kg', 54.99, 'Tata', 'Available', 110, 4),    ('GRC004', 'Salt', '1kg', 19.99, 'Tata', 'Available', 130, 4),    ('GRC005', 'Cooking Oil', '1L', 89.99, 'Fortune', 'Available', 80, 5),    ('GRC006', 'Lentils', '1kg', 69.99, 'Kohinoor', 'Available', 90, 5),    ('GRC007', 'Pasta', '500g', 49.99, 'Maggi', 'Available', 70, 4),    ('GRC008', 'Canned Vegetables', '400g', 29.99, 'Dole', 'Available', 100, 4),
+('GRC009', 'Instant Coffee', '200g', 99.99, 'Bru', 'Available', 80, 5),    ('GRC010', 'Tea Bags', '100pcs', 69.99, 'Red Label', 'Available', 100, 4),    ('GRC011', 'Pasta Sauce', '500g', 49.99, 'Classico', 'Available', 70, 4),    ('GRC012', 'Breakfast Cereal', '500g', 69.99, 'Kelloggs', 'Available', 90, 5),    ('GRC013', 'Milk', '1L', 34.99, 'Amul', 'Available', 100, 4),    ('GRC014', 'Bread', '400g', 24.99, 'Britannia', 'Available', 120, 4),    ('GRC015', 'Jam', '250g', 39.99, 'Kissan', 'Available', 60, 5),    ('GRC016', 'Butter', '200g', 59.99, 'Amul', 'Available', 70, 5),    ('GRC017', 'Yogurt', '500g', 29.99, 'Nestlé', 'Available', 80, 4),    ('GRC018', 'Cheese', '250g', 54.99, 'Amul', 'Available', 65, 4),    ('GRC019', 'Instant Noodles', '300g', 19.99, 'Maggi', 'Available', 110, 4),    ('GRC020', 'Spaghetti', '500g', 39.99, 'Barilla', 'Available', 100, 5);
+
+CREATE TABLE CLOTHES (    
+Sr_no INT  PRIMARY KEY,    
+Product_code VARCHAR(10) NOT NULL,    
+Product_name VARCHAR(255) NOT NULL,    
+Brand VARCHAR(255) NOT NULL,    
+Size VARCHAR(20) NOT NULL,    
+Price_in_inr DECIMAL(10, 2) NOT NULL,    Availability_of_product VARCHAR(50) NOT NULL,    
+In_stock INT NOT NULL,    Product_rating INT);
+
+INSERT INTO CLOTHES (Sr_no,Product_code, Product_name, Brand, Size, Price_in_inr, Availability_of_product, In_stock, Product_rating) VALUES    (1,'CLT001', 'Mens Blue Jeans', 'Levis', '32W x 34L', 17499.93, 'Available', 50, 4),    (2,'CLT002', 'Womens Floral Dress', 'Zara', 'Medium', 10499.93, 'Available', 30, 5),    (3,'CLT003', 'Mens Casual Shirt', 'Gap', 'Large', 6999.93, 'Available', 40, 4),    (4,'CLT004', 'Womens Running Shoes', 'Nike', 'US 7', 13999.93, 'Available', 20, 4),    (5,'CLT005', 'Mens Formal Suit', 'Hugo Boss', '42R', 34999.93, 'Available', 10, 5),    
+(6,'CLT006', 'Womens Sweater', 'H&M', 'Small', 5599.93, 'Available', 25, 4),    (7,'CLT007', 'Mens Athletic Shorts', 'Adidas', 'Large', 4899.93, 'Available', 35, 3),    (8,'CLT008', 'Womens Denim Jacket', 'Calvin Klein', 'Medium', 7699.93, 'Available', 15, 4),    (9,'CLT009', 'Mens Polo T-shirt', 'Ralph Lauren', 'Large', 4549.93, 'Available', 45, 4),    (10,'CLT010', 'Womens Leather Boots', 'Timberland', 'US 8.5', 17499.93, 'Available', 22, 5),    (11,'CLT011', 'Womens Summer Dress', 'Foreverg 21', 'Small', 999.93, 'Available', 28, 4),    (12,'CLT012', 'Mens Classic Trousers', 'Dockers', '34W x 32L', 899.93, 'Available', 38, 4),    (13,'CLT013', 'Womens Hooded Sweatshirt', 'Gap', 'Medium', 1199.93, 'Available', 19, 5),    (14,'CLT014', 'Mens Running Shoes', 'New Balance', 'US 9', 1799.93, 'Available', 14, 4),    (15,'CLT015', 'Womens Denim Skirt', 'Levis', '28', 799.93, 'Available', 32, 4);
+
+CREATE TABLE BOOK (    
+Sr_no INT ,    
+Product_code VARCHAR(20) PRIMARY KEY,    
+Product_name VARCHAR(255) NOT NULL,    
+Publication VARCHAR(100) NOT NULL,    
+Product_rating NUMERIC,    
+MRP_Per_product NUMERIC(10, 2) NOT NULL,    Availability_of_product VARCHAR(15),    
+In_stock INT);
+
+INSERT INTO BOOK (Sr_no, Product_code, Product_name, Publication, MRP_Per_product, Availability_of_product, In_stock, Product_rating) VALUES    (1, 'ASD123', 'The Book Thief', 'Knopf', 1798, 'Available', 21, 3),    (2, 'ASD234', 'The Time Traveler''s Wife', 'MacAdam/Cage', 1498, 'Available', 27, 4),    (3, 'ASD345', 'Atonement', 'Jonathan Cape', 1398, 'Available', 24, 2),    (4, 'ASD456', 'The Grapes of Wrath', 'The Viking Press', 1398, 'Available', 29, 5),    
+(5, 'ASD567', 'The Little Prince', 'Reynal & Hitchcock', 1498, 'Available', 44, 1),    (6, 'ASD678', 'The Brothers Karamazov', 'The Russian Messenger', 1598, 'Available', 69, 3),    (7, 'ASD789', 'The Name of the Wind', 'DAW Books', 1698, 'Available', 56, 4),    (8, 'ASD890', 'The Martian', 'Crown Publishing', 1198, 'Available', 52, 2),    (9, 'QUE123', 'The Catcher in the Rye', 'Little, Brown and Company', 1098, 'Available', 55, 5),    (10, 'QUE234', 'The Road', 'Alfred A. Knopf', 1098, 'Available', 62, 1),    (11, 'QUE345', 'The Hobbit', 'George Allen & Unwin', 1598, 'Available', 67, 4),    (12, 'QUE456', 'Dune', 'Chilton Books', 1298, 'Available', 48, 3),    (13, 'QUE567', 'The Night Circus', 'Doubleday', 1298, 'Available', 42, 2),    (14, 'QUE678', 'Siddhartha', 'New Directions', 1898, 'Available', 68, 5),    (15, 'YVH123', 'The Secret Garden', 'Frederick A. Stokes Company', 1098, 'Available', 63, 1),    (16, 'YVH234', 'The Time Machine', 'William Heinemann', 1398, 'Available', 43, 4),    (17, 'YVH345', 'The Grapes of Wrath', 'The Viking Press', 1398, 'Available', 29, 3),    (18, 'YVH456', 'The Martian', 'Crown Publishing', 1198, 'Available', 52, 2),    (19, 'YVH567', 'The Time Traveler''s Wife', 'MacAdam/Cage', 1498, 'Available', 27, 5),    (20, 'YVH678', 'The Ocean at the End of the Lane', 'William Morrow', 1698, 'Available', 31, 1);
