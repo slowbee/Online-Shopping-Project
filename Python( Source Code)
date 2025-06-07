@@ -297,6 +297,65 @@ def checkout():
     total();
     print("------------------------------------------------------------------------------------------------------------------------")
     cursor.close();
-            
+
+
+x = ['electronics','clothes','grocery','book','cosmetics','furniture','stationery','medicine','toygames’]
+
+y = [231,417,1881,909,1778,1700,3570,1690,1685]
+plt.xticks(fontsize=6)
+plt.bar(x,y,color = ['r','c','k','y','m','c'])
+plt.xlabel('Different Categories', fontsize=12)
+plt.ylabel('Collection of items for each indivual category')
+plt.title('Number of Items in stock for each category')
+plt.figure(figsize=(50,50))
+plt.show()
+        
+
+
+x = ['electronics','clothes','grocery','book','cosmetics','furniture','stationery','medicine','toygames’]
+
+y = [106,240,496,104,68,153,98,162,134]
+plt.xticks(fontsize=6)
+plt.bar(x,y,color = ['r','c','k','y','m','c'])
+plt.xlabel('Different Categories', fontsize=12)
+plt.ylabel('Number of products sold')
+plt.title('Number of Items sold in each category')
+plt.figure(figsize=(50,50))
+plt.show()
+
+if mycon.is_connected():
+    print("Connected succesfully");
+        
+def login():
+    username = input("Enter your username: ")  
+    password = input("Enter your password: ")      
+    sql = "SELECT * FROM login"
+
+
+    cursor.execute(sql)
+    results = cursor.fetchall()
+    
+    for row in results:
+            user,pwd = row[0],row[1]
+            if username == user and password == pwd:  
+                    print("Login successful!")
+                    global qt
+                    qt =5
+                    break
+            else:
+                qt = 6
+                print("Invalid username or password. Please try again.")
+                return;
+                login();
+                return;
+
+login();
+if qt ==5:
+    start();
+    selection();
+    cursor.close();
+else:
+    print("Login Unsuccesful mate!")
+
 
 
